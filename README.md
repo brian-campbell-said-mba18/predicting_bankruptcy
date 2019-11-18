@@ -1,5 +1,5 @@
 # Description
-Brian Campbell's Udacity Capstone Project. This builds upoon Mattson & Steinert's research on predicting bankruptcies in Polish companies.
+Brian Campbell's Udacity Capstone Project. This builds upoon Mattson & Steinert's research on predicting bankruptcies in Polish manufacturing companies.
 
 [Bachelor's thesis](https://gupea.ub.gu.se/handle/2077/54283) by [Björn Mattsson](https://www.linkedin.com/in/björn-mattsson-02357b70) and 
 [Olof Steinert](https://www.linkedin.com/in/olof-steinert/) in Economics at 
@@ -13,17 +13,17 @@ The obtained results are in line with previously published findings. It is shown
 Keywords: Economics, Corporate bankruptcy prediction, Machine learning, Neural networks, Missing values
 
 ## The Real Abstract:
-Mattson & Steinert's Multilayer Perceptron (MLP) algorithm performed the worst. I believe with some work on the hyperparameters, the accuracy could improve. I will use area under the curve (AUC) of the Receiver Operating Characteristic (ROC) to measure the accuracy of my algorithms. Mattson & Steinert used AUC.
+Mattson et al made critical errors in preprocessing the data. Mattson et al broke down the dataset into five distinct datasets, a dataset for each of the five years (Reference 7; Reference 17). They then created three different versions of the data for each year: the first had no null values in the data, while the second and third had null values (Reference 7). Furthermore, version one had no feature variables regarding null values, version two had dummy variables created for each x feature, signaling whether a given value in the x feature was null, and version three had a null counter variable that counted the number of null values in a given row of data (Reference 7). They then split the data for each year and each version of the data. The error that Mattson et al overlooked was that the second and fourth year datasets contained rows that contained at least one null value (see Appendices B and C). They probably imputed values for the nulls in the second and fourth years, which one cannot do in a dataset that has at least one null value in each row. If every row has at least one null value, then it is impossible to create a testing set without imputing values into it, which would introduce data leakage, model information outside the scope of the training set, into the testing set (Reference 18; Reference 19). Data leakages lead to overly optimistic models, and avoiding obvious sources of data leakages, such as imputing values into the testing data, is common practice in building machine learning models (Reference 18; Reference 19). The violation of this practice necessitates that a different methodology from Mattson et al’s be used.
 
-## Bugs:
-The results of my first and only algorithm are beyond stupid (the algorithm can be found in MLP.py). I get 0.0000 validation accuracies for all the epochs of my algorithm. I believe the culprit could be one of several things. First, I intentionally run my algorithm with NaN values and that could be messing it up (perhaps I simply need to change all my NaN values to zeros). Second, I'm not sure if I pre-processed my target variable correctly. It's a binary variable with 1 = bankrupt, and 0 = not bankrupt. While I performed standard scaling on my X variables, I figured I did not need to process the 1s and 0s in my Y variable (was this a mistake). Please help.
+The new problem this analysis addresses is given that Mattson et al’s models are probably overly optimistic due to data leakage, how well should an MLP model, not corrupted by imputed values in the testing data, perform in predicting bankruptcy? Also, along with a new methodology that protects the model from data leakage, this analysis will also need a new benchmark for performance. Logistic regression models are used as the benchmark for the MLP models. The metric used to measure the efficacy of these models are AUC scores.
 
 
 # How to run
 
 * Ignore any file that looks like this: OLD_filename_OLD. Those are Mattson & Steinart's scripts that I don't use for my analysis.
-* Simply run bankruptcy-neural-network-analysis.ipynb
-
+* Also, ignore MLP.py.
+* To run the data cleaning and preprocessing part of the analyisis, run bankruptcy-data.ipynb.
+* To run the benchmark logistic regression and MLP models, run bankruptcy-model.ipynb.
 
 ## Version info
 
