@@ -76044,6 +76044,43 @@ Name: missing_count, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This creates the no-preaking folder to save all the prepocessed data.</span>
+<span class="c1"># This comes from Reference 28 in References.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;no-peaking&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;no-peaking&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The directory already exists.&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The directory already exists.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[202]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -76156,6 +76193,7 @@ Name: missing_count, dtype: int64</pre>
 <li><a href="https://beckernick.github.io/oversampling-modeling/">https://beckernick.github.io/oversampling-modeling/</a></li>
 <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV</a></li>
 <li><a href="https://stackoverflow.com/questions/41032551/how-to-compute-receiving-operating-characteristic-roc-and-auc-in-keras">https://stackoverflow.com/questions/41032551/how-to-compute-receiving-operating-characteristic-roc-and-auc-in-keras</a></li>
+<li><a href="https://stackoverflow.com/questions/273192/how-can-i-safely-create-a-nested-directory">https://stackoverflow.com/questions/273192/how-can-i-safely-create-a-nested-directory</a></li>
 </ol>
 
 </div>

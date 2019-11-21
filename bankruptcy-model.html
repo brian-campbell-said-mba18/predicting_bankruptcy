@@ -13838,11 +13838,16 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This creates a directory to save the best models for the MLP.</span>
-<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;saved_models&#39;</span><span class="p">)</span>
+<span class="c1"># This comes from Reference 13 in References.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;saved_models&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;saved_models&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Directory already exists.&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13858,15 +13863,9 @@ div#notebook {
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">FileExistsError</span>                           Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-102-0e0cd0986d66&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-red-intense-fg ansi-bold"># This creates a directory to save the best models for the MLP.</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>os<span class="ansi-yellow-intense-fg ansi-bold">.</span>mkdir<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;saved_models&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">FileExistsError</span>: [WinError 183] Cannot create a file when that file already exists: &#39;saved_models&#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Directory already exists.
+</pre>
 </div>
 </div>
 
@@ -16587,6 +16586,7 @@ Epoch 00100: val_loss improved from 0.60270 to 0.60233, saving model to saved_mo
 <li><a href="https://machinelearningmastery.com/reproducible-results-neural-networks-keras/">https://machinelearningmastery.com/reproducible-results-neural-networks-keras/</a></li>
 <li><a href="https://stackoverflow.com/questions/25009284/how-to-plot-roc-curve-in-python">https://stackoverflow.com/questions/25009284/how-to-plot-roc-curve-in-python</a></li>
 <li><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure">https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure</a></li>
+<li><a href="https://stackoverflow.com/questions/273192/how-can-i-safely-create-a-nested-directory">https://stackoverflow.com/questions/273192/how-can-i-safely-create-a-nested-directory</a></li>
 </ol>
 
 </div>
