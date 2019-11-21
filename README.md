@@ -21,10 +21,10 @@ The new problem this analysis addresses is given that Mattson et al’s models a
 # How to run
 
 * Ignore any file that looks like this: OLD_filename_OLD. Those are Mattson & Steinart's scripts that I don't use for my analysis.
-* Also, ignore MLP.py.
 * To run the data cleaning and preprocessing part of the analyisis, run bankruptcy-data.ipynb.
 * To run the benchmark logistic regression and MLP models, run bankruptcy-model.ipynb.
 
-## Version info
+## Software Info
 
-* Python 3.6
+* Python 3.6.7
+* TensorFlow 3.6.7
