@@ -27,4 +27,4 @@ The new problem this analysis addresses is given that Mattson et al’s models a
 ## Software Info
 
 * Python 3.6.7
-* TensorFlow 3.6.7
+* TensorFlow 1.13.1
